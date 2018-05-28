@@ -38,7 +38,7 @@ Após a instalação da linguagem, deve-se instalar as bibliotecas [Pandas](http
 
 Uma maneira alternativa para instalar as dependências é execuntado as seguintes linhas de comando:
 ```
-python3 -m pip install scipy matplotlib pandas numpy
+python -m pip install scipy matplotlib pandas numpy
 ```
 # Linux
 
