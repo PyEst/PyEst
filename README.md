@@ -2,9 +2,10 @@
 
 ![Alt Text](https://github.com/PyEst/pyest.github.io/blob/master/logo.png)
 
-PyEst é um ferramenta para tratamento estatístico desenvolvida em Python. Proposta por [Jackson Osvaldo da Silva Braga](https://jacksonosvaldo.github.io), a aplicação pretende ser útil em diversas áreas, dinamizando o tratamento e análise de dados, sejam eles ambientais ou não.
 
-Em sua primeira versão, tornada pública em 25 de maio de 2018, ainda temos alguns bugs não resolvidos e outros que, com o decorrer do tempo, surgirão. Esperamos que a comunidade, seja ela científica, de programadores ou de curiosos sobre o assunto, colaborem com a proposta da aplicação, ajudando a melhorar e aprimorar o software.
+PyEst é umA ferramenta para tratamento estatístico desenvolvida em Python. Proposta por [Jackson Osvaldo da Silva Braga](https://jacksonosvaldo.github.io), a aplicação pretende ser útil em diversas áreas, dinamizando o tratamento e análise de dados, sejam eles ambientais ou não.
+
+Em sua primeira versão (0.1), tornada pública em 25 de maio de 2018, ainda temos alguns bugs não resolvidos e outros que, com o decorrer do tempo, surgirão. Esperamos que a comunidade, seja ela científica, de programadores ou de curiosos sobre o assunto, colaborem com a proposta da aplicação, ajudando a melhorar e aprimorar o software.
 
 # Windows
 
@@ -71,5 +72,3 @@ Qualquer dúvida ou notificação sobre o incorreto funcionamento da aplicação
 Com autor no texto: ... Braga (2018)
 
 Com autor entre parênteses: ... (BRAGA, 2018)
-
-
