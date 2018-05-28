@@ -65,7 +65,7 @@ Qualquer dúvida ou notificação sobre o incorreto funcionamento da aplicação
 
 # Referência
 
-> [BRAGA, Jackson Osvaldo da Silva](http://lattes.cnpq.br/9545832415473039). **PyEst**: Aplicação Para Análises Estatísticas. Version 0.1. [S.l.: s.n.], 2018.
+> [BRAGA, Jackson Osvaldo da Silva](http://lattes.cnpq.br/9545832415473039). **PyEst**. Version 0.1. [S.l.: s.n.], 2018.
 
 # Citação
 
