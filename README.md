@@ -1,6 +1,8 @@
 # PyEst
 
-PyEst é um ferramenta para tratamento estatístico desenvolvida em Python. Proposta por [Jackson Osvaldo](https://jacksonosvaldo.github.io), a aplicação pretende ser útil em diversas áreas, dinamizando o tratamento e análise de dados, sejam eles ambientais ou não.
+![Alt Text](https://github.com/PyEst/pyest.github.io/blob/master/logo.png)
+
+PyEst é um ferramenta para tratamento estatístico desenvolvida em Python. Proposta por [Jackson Osvaldo da Silva Braga](https://jacksonosvaldo.github.io), a aplicação pretende ser útil em diversas áreas, dinamizando o tratamento e análise de dados, sejam eles ambientais ou não.
 
 Em sua primeira versão, tornada pública em 25 de maio de 2018, ainda temos alguns bugs não resolvidos e outros que, com o decorrer do tempo, surgirão. Esperamos que a comunidade, seja ela científica, de programadores ou de curiosos sobre o assunto, colaborem com a proposta da aplicação, ajudando a melhorar e aprimorar o software.
 
@@ -8,16 +10,48 @@ Em sua primeira versão, tornada pública em 25 de maio de 2018, ainda temos alg
 
 [Download Windows](https://github.com/PyEst/PyEst/blob/master/exe/PyEst_win.zip?raw=true)
 
-Para Executar o software em ambiente Windows, é necessário a instalação da linguagem [Python](https://python.org), versão 3.5. Para realizar o download desta versão, basta clicar [aqui](https://www.python.org/downloads/release/python-353/).
+Para Executar o software em ambiente Windows, é necessário a instalação da linguagem [Python](https://python.org), versão 3.5.
+
+## Instalação da Linguagem de Programação Python
+
+Para instalar a linguagem em ambiente Windows, atentando-se a arquitetura da máquina, se 32 bits ou 64 bits, deve-se seguir os seguintes passos.
+
+**1º Passo**: Download do Instalador
+
+PyThon 64 Bits | Python 32 Bits
+------------ | -------------
+[python-3.5.3-amd64.exe](https://www.python.org/ftp/python/3.5.3/python-3.5.3-amd64.exe) | [python-3.5.3.exe](https://www.python.org/ftp/python/3.5.3/python-3.5.3.exe)
+
+**2º Passo**: Executando Instalador
+
+Após concluído o download, execute o instalador em modo administrativo. O sistema perguntará se você deseja prosseguir àquela operação. Clique em "sim" e aguarde.
+
+Deixe marcada a opção para adicionar os caminhos das pastas da linguagem às variáveis de ambiente do sistema. Marque a opção relativa a instalação padrão e prossiga.
+
+Clique em prosseguir e aguarde a instalação terminar.
+
+Caso a explicação acima esteja confusa, veja o tutorial gravado por [Nilo Menezes](https://python.nilo.pro.br/) de título [*Instalando o Python no Windows*](https://youtu.be/gDxt7mncWys).
+
+**3º Passo**: Concluindo
 
 Após a instalação da linguagem, deve-se instalar as bibliotecas [Pandas](https://pandas.pydata.org/), [Scipy](https://www.scipy.org/), [Numpy](http://www.numpy.org/) e [Matplotlib](https://matplotlib.org/). A instalação pode ser feita clicando em *install_libs.bat*.
 
-
+Uma maneira alternativa para instalar as dependências é execuntado as seguintes linhas de comando:
+```
+python3 -m pip install scipy matplotlib pandas numpy
+```
 # Linux
 
 [Dowload Linux](https://github.com/PyEst/PyEst/blob/master/exe/PyEst_linux.zip?raw=true)
 
 Em ambiente linux, caso não esteja instalada a versão 3.5 da linguagem Python, pode-se fazer isso executando o script *install_libs.sh* via linha comando. Para isso, deve-se atribuir permissão ao arquivo com o comando *chmod +x install_libs.sh*. Feito isso, basta executar o script com *./install_libs.sh*.
+
+Uma maneira alternativa para instalar as dependências é execuntado as seguintes linhas de comando:
+```
+sudo apt-get install python3.5
+
+python3 -m pip install scipy matplotlib pandas numpy
+```
 
 # Código Fonte
 Para ter acesso ao repositório com o código fonte da aplicação, basta clicar [aqui](https://github.com/PyEst/PyEst/tree/master/source).
@@ -27,3 +61,15 @@ Para ter acesso ao repositório com o código fonte da aplicação, basta clicar
 Qualquer dúvida ou notificação sobre o incorreto funcionamento da aplicação, mande-me um e-mail.
 
 [jacksonosvaldo@live.com](mailto:jacksonosvaldo@live.com)
+
+# Referência
+
+> [BRAGA, Jackson Osvaldo da Silva](http://lattes.cnpq.br/9545832415473039). **PyEst**: Aplicação Para Análises Estatísticas. Version 0.1. [S.l.: s.n.], 2018.
+
+# Citação
+
+Com autor no texto: ... Braga (2018)
+
+Com autor entre parênteses: ... (BRAGA, 2018)
+
+
