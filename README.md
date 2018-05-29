@@ -2,7 +2,6 @@
 
 ![Alt Text](https://github.com/PyEst/pyest.github.io/blob/master/logo.png)
 
-
 PyEst é uma ferramenta para tratamento estatístico desenvolvida em Python. Proposta por [Jackson Osvaldo da Silva Braga](https://jacksonosvaldo.github.io), a aplicação pretende ser útil em diversas áreas, dinamizando o tratamento e análise de dados, sejam eles ambientais ou não.
 
 Em sua primeira versão (0.1), tornada pública em 25 de maio de 2018, ainda temos alguns bugs não resolvidos e outros que, com o decorrer do tempo, surgirão. Esperamos que a comunidade, seja ela científica, de programadores ou de curiosos sobre o assunto, colaborem com a proposta da aplicação, ajudando a melhorar e aprimorar o software.
@@ -31,7 +30,7 @@ Deixe marcada a opção para adicionar os caminhos das pastas da linguagem às v
 
 Clique em prosseguir e aguarde a instalação terminar.
 
-Caso a explicação acima esteja confusa, veja o tutorial gravado por [Nilo Menezes](https://python.nilo.pro.br/) de título [*Instalando o Python no Windows*](https://youtu.be/gDxt7mncWys).
+Caso a explicação acima esteja confusa, veja o tutorial gravado por mim de título [*PyEst - Instalação em Ambiente Windows*](https://youtu.be/YWtz38CqAMc).
 
 **3º Passo**: Concluindo
 
@@ -75,3 +74,5 @@ Qualquer dúvida ou notificação sobre o incorreto funcionamento da aplicação
 Com autor no texto: ... Braga (2018)
 
 Com autor entre parênteses: ... (BRAGA, 2018)
+
+
