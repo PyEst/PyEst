@@ -3,9 +3,8 @@
 
 from tkinter import *
 import tkinter
-from tkinter.ttk import *
-from tkinter import ttk
-# from tkinter.ttk import *
+import tkinter.scrolledtext as tkst
+from tkinter.constants import END,HORIZONTAL, VERTICAL, NW, N, E, W, S, SUNKEN, LEFT, RIGHT, TOP, BOTH, YES, NE, X, RAISED, SUNKEN, DISABLED, NORMAL, CENTER, WORD
 import tkinter.filedialog as fdlg
 from tkinter import messagebox as msb
 import pandas as pd
@@ -52,12 +51,16 @@ def sair():
     if sairQuestion == "yes":
         janela.destroy()
 
+
 def erro():
     msb.showerror(title='Erro', message='Não foi possível executar esta ação. Verique se o seu arquivo foi carregado corretamente.')
+
 
 def exibir():
     exibir = msb.askquestion(title="Operação concluida", message='Operação realizada com sucesso. Deseja exibir os dados na área de saída?')
     return exibir
+
+
 def carregarArquivo():
 
     try:
@@ -87,7 +90,9 @@ def carregarArquivo():
         msb.showwarning('Aviso','Arquivo não carregado. Para executar as operações estatísticas você precisa carregar um arquivo csv.')
     except AttributeError:
         msb.showwarning('Aviso','Arquivo não carregado. Para executar as operações estatísticas você precisa carregar um arquivo csv.')
+
 def salvar():
+
     try:
         f = fdlg.asksaveasfile(mode='w', defaultextension = ".txt")
         if f is None:
@@ -416,43 +421,19 @@ filemenu3.add_command(label='Correlação',font='12',command=Corr)
 ##Menu 04 - Ajuda e Documentação
 menubar.add_cascade(label = 'Ajuda',font='12', menu=filemenu4)
 filemenu4.add_command(label='Documentação',font='12', command=doc)
-filemenu4.add_command(label='Formatação do arquivo csv para análise',font='12',
-                      command=formatoCSV)
+filemenu4.add_command(label='Formatação do arquivo csv para análise',font='12',command=formatoCSV)
 filemenu4.add_command(label='Sobre',font='12', command=sobre)
 
 "-----------------------------------"
 
 ### Configurando janela de saida das análises
 
-saida = Text(janela,font='11', width = 134, height = 190)
-rolar = Scrollbar(janela, command = saida.yview)
-teste = Scrollbar()
-saida['yscrollcommand'] = rolar.set
-saida.pack(side=LEFT, fill = Y)
-rolar.pack(side=RIGHT, fill = Y)
-
-### Configurando Tabela de dados
-"""def tabela():
-    tabela = Tk()
-    tv = Treeview(tabela)
-    tv.grid(sticky = (N,S,W,E))
-    tabela.
-    tabela.treeview = tv
-    tabela.grid_rowconfigure(0, weight = 1)
-    tabela.grid_columnconfigure(0, weight = 1)
-
-    for linha in arquivoTratamento:
-            
-            col = []
-            col = linha.split(sep=',')
-            #print(col[3:7])
-            tabela.treeview.insert('', 0, text=col[3], values=(col[4],col[5], col[6]))
-
-    tabela.title('Tabela de Dados || PyEst')
-    tabela.mainloop()
-    """
+saida = tkst.ScrolledText(master = janela,font='12',wrap= WORD,width  = 20,height = 10)
+saida.pack(padx=10, pady=10, fill=BOTH, expand=True)
 
 
 janela.title('PyEst - Desenvolvido por Jackson Osvaldo da Silva Braga')
-janela.geometry('1000x800')
+
+
+janela.geometry('{}x{}'.format(janela.winfo_screenwidth(),janela.winfo_screenheight()))
 janela.mainloop()
