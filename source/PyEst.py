@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+
 from tkinter import *
 import tkinter
 import tkinter.scrolledtext as tkst
+from tkinter.ttk import *
+from tkinter import ttk
 from tkinter.constants import END,HORIZONTAL, VERTICAL, NW, N, E, W, S, SUNKEN, LEFT, RIGHT, TOP, BOTH, YES, NE, X, RAISED, SUNKEN, DISABLED, NORMAL, CENTER, WORD
 import tkinter.filedialog as fdlg
 from tkinter import messagebox as msb
@@ -34,7 +37,6 @@ filemenu3 = Menu(menubar)
 filemenu4 = Menu(menubar)
 
 ###Autoria
-
 autoria = '\n'+('==='*21)+"""
 Análise realizada com PyEst
 Software desenvolvido por Jackson Osvaldo da Silva Braga
@@ -90,6 +92,11 @@ def carregarArquivo():
         msb.showwarning('Aviso','Arquivo não carregado. Para executar as operações estatísticas você precisa carregar um arquivo csv.')
     except AttributeError:
         msb.showwarning('Aviso','Arquivo não carregado. Para executar as operações estatísticas você precisa carregar um arquivo csv.')
+
+def exibir():
+    exibir = pd.read_csv(arquivoTratamento)
+    saida.insert(END, str(exibir)+'\n')
+    msb.showinfo(title='Concluido', message='Operação realizada com sucesso!')
 
 def salvar():
 
@@ -217,14 +224,14 @@ def Corr():
         erro()
 
 
-###Configurando exibição dos gráficos
-
-    
+###Configurando exibição dos gráficos    
 def graph():
     
     try:
         arquivoTratamento
+        
         try:
+            
             graficos = Tk()
 
             ## Definindo função para criação dos gráficos
@@ -302,10 +309,13 @@ def graph():
                             plt.show()
                 except KeyError:
                     msb.showerror(title='Erro', message='Selecione os valores correspondentes ao tipo do gráfico. Apenas assim poderá exibi-lo.')
+                except NameError:
+                    msb.showerror(title='Erro', message='Selecione os valores correspondentes ao tipo do gráfico. Apenas assim poderá exibi-lo.')
 
             ##Box variáveis
             colunas = ttk.Combobox(graficos)
             colunas['font'] = ('12')
+
             ## Label Variáveis
             var = Label(graficos, text='Variáveis',font='12')
 
@@ -346,6 +356,7 @@ def graph():
             a = open(str(arquivoTratamento),'r')
             i = 0
             for linha in a:
+                linha = linha.strip()
                 i = i + 1
                 b = []
                 col = []
@@ -355,25 +366,25 @@ def graph():
                     eixoX['values'] = col
                     eixoY['values'] = col
                     break
-        # colunas['values'] = ['Todas as Colunas']+b ##Atribuindo valores ao combbox
+        
 
             graficos.resizable(0,0)
             graficos.title('Gráficos')
             graficos.mainloop()
         except NameError:
             erro()
+        except FileNotFoundError:
+            erro()
+        except OSError:
+            erro()
     except NameError:
         erro()
     except FileNotFoundError:
     	erro()
-        
-
-
-    
-        
+    except OSError:
+        erro() 
 
 ###Configurando Aba Ajuda
-
 def doc():
     msb._show(title='Documentação', message='Você pode ter acesso a documentação do PyEst no site da aplicação, o mesmo que você usou para fazer o download do arquivo executável.')
 
@@ -394,7 +405,6 @@ filemenu.add_command(label='Carregar Arquivo',font='12', command = carregarArqui
 filemenu.add_command(label='Resumo do Banco de Dados',font='12', command = resumo)
 filemenu.add_command(label='Gráficos',font='12',command=graph)
 filemenu.add_command(label='Salvar',font='12', command=salvar)
-# filemenu.add_command(label='Salvar como...')
 filemenu.add_separator()
 filemenu.add_command(label='Sair',font='12', command=sair)
 
@@ -404,8 +414,7 @@ filemenu2.add_command(label='Média',font='12', command = media)
 filemenu2.add_command(label='Mediana',font='12', command = mediana)
 filemenu2.add_command(label='Quantil',font='12', command=quantil)
 filemenu2.add_command(label='Moda',font='12', command=moda)
-# filemenu2.add_separator()
-# filemenu2.add_command(label='Gráficos',font='12',command=graph)
+
 
 ##Menu 03 - Medidas de Dispersão
 menubar.add_cascade(label = 'Medidas de Dispersão',font='12', menu=filemenu3)
@@ -415,8 +424,6 @@ filemenu3.add_command(label='Desvio Padrão',font='12',command=desvioPadrao)
 filemenu3.add_command(label='Desvio Absoluto',font='12',command=desvAbsoluto)
 filemenu3.add_command(label='Covariância',font='12',command=covar)
 filemenu3.add_command(label='Correlação',font='12',command=Corr)
-# filemenu3.add_separator()
-# filemenu3.add_command(label='Gráficos',font='12')
 
 ##Menu 04 - Ajuda e Documentação
 menubar.add_cascade(label = 'Ajuda',font='12', menu=filemenu4)
@@ -427,7 +434,6 @@ filemenu4.add_command(label='Sobre',font='12', command=sobre)
 "-----------------------------------"
 
 ### Configurando janela de saida das análises
-
 saida = tkst.ScrolledText(master = janela,font='12',wrap= WORD,width  = 20,height = 10)
 saida.pack(padx=10, pady=10, fill=BOTH, expand=True)
 
