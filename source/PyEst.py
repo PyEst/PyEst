@@ -11,12 +11,13 @@ from tkinter.constants import END,HORIZONTAL, VERTICAL, NW, N, E, W, S, SUNKEN, 
 import tkinter.filedialog as fdlg
 from tkinter import messagebox as msb
 import pandas as pd
+from pandas import ols
 import matplotlib.pyplot as plt
 import matplotlib
 
 
 ## Default
-matplotlib.style.use('ggplot')
+#matplotlib.style.use('ggplot')
 
 ###janela Principal
 janela = Tk()
@@ -35,6 +36,7 @@ filemenu = Menu(menubar)
 filemenu2 = Menu(menubar)
 filemenu3 = Menu(menubar)
 filemenu4 = Menu(menubar)
+filemenu5 = Menu(menubar)
 
 ###Autoria
 autoria = '\n'+('==='*21)+"""
@@ -223,10 +225,96 @@ def Corr():
     except  OSError:
         erro()
 
+def Regressão():
+
+    try:
+
+        arquivoTratamento
+
+        try:
+
+            reg = Tk()
+
+            def gerarRegressao():
+
+                """
+                --- Carregar arquivo/DB e, após isso, converter o DB em um Data Frame.
+                
+                db = pd.read_csv()
+                dbFrame = pd.DataFrame()
+
+                """
+
+                db = pd.read_csv(arquivoTratamento)
+                dbFrame = pd.DataFrame(db)
+
+                model = model = ols(y=dbFrame['{}'.format(eixoY.get())], x=dbFrame['{}'.format(eixoX.get())])
+                
+                saida.insert(END, ('==='*15)+'\n\tANÁLISE CONCLUÍDA - REGRESSÃO LINEAR\n'+('==='*15)+'\n'+str(model)+'\n')
+                msb.showinfo(title='Concluido', message='Operação realizada com sucesso!')
+
+            
+            ##Box variáveis
+            colunas = ttk.Combobox(reg)
+            colunas['font'] = ('12')
+
+            #modelo = Label(reg, text='Modelo: {}'.format(), font='12')
+
+            ## Eixo x e Label Eixo x
+            eixoX = ttk.Combobox(reg)
+            eixoX['font'] = ('12')
+            lEixoX = Label(reg, text='Eixo X', font='12')
+
+            ## Eixo Y e Label Eixo Y
+            eixoY = ttk.Combobox(reg)
+            eixoY['font'] = ('12')
+            lEixoY = Label(reg, text='Eixo Y', font='12')
+
+            ## Gerar Análise
+            gerarAnalise = Button(reg, text='Gerar Análise', comman = gerarRegressao)
+
+            ## Rodando wid's
+            lEixoX.pack()
+            eixoX.pack()
+            lEixoY.pack()
+            eixoY.pack()
+            gerarAnalise.pack()
+
+            # Lendo linhas do arquivo e selecionando variáveis
+            a = open(str(arquivoTratamento),'r')
+            i = 0
+            for linha in a:
+                linha = linha.strip()
+                i = i + 1
+                b = []
+                col = []
+                col = linha.split(sep=',')
+                if i == 1:
+                    colunas['values'] = ['Todas']+col
+                    eixoX['values'] = col
+                    eixoY['values'] = col
+                    break
+            
+            reg.resizable(0,0)
+            reg.title('Regressão Linear')
+            reg.mainloop()
+
+        except NameError:
+            erro()
+        except  OSError:
+            erro()
+        
+    except NameError:
+        erro()
+    except OSError:
+        erro()
+
+
 
 ###Configurando exibição dos gráficos    
 def graph():
-    
+
+        
     try:
         arquivoTratamento
         
@@ -425,7 +513,12 @@ filemenu3.add_command(label='Desvio Absoluto',font='12',command=desvAbsoluto)
 filemenu3.add_command(label='Covariância',font='12',command=covar)
 filemenu3.add_command(label='Correlação',font='12',command=Corr)
 
+
 ##Menu 04 - Ajuda e Documentação
+menubar.add_cascade(label = 'Inferência Estatística',font='12', menu=filemenu5)
+filemenu5.add_command(label='Regressão Linear',font='12', command=Regressão)
+
+##Menu 05 - Ajuda e Documentação
 menubar.add_cascade(label = 'Ajuda',font='12', menu=filemenu4)
 filemenu4.add_command(label='Documentação',font='12', command=doc)
 filemenu4.add_command(label='Formatação do arquivo csv para análise',font='12',command=formatoCSV)
@@ -434,7 +527,7 @@ filemenu4.add_command(label='Sobre',font='12', command=sobre)
 "-----------------------------------"
 
 ### Configurando janela de saida das análises
-saida = tkst.ScrolledText(master = janela,font='12',wrap= WORD,width  = 20,height = 10)
+saida = tkst.ScrolledText(master = janela,wrap= WORD,width  = 20,height = 10)
 saida.pack(padx=10, pady=10, fill=BOTH, expand=True)
 
 
