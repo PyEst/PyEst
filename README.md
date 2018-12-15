@@ -1,6 +1,6 @@
 # PyEst
 
-![Alt Text](https://github.com/PyEst/pyest.github.io/blob/master/logo.png)
+![Alt Text](logo.png)
 
 PyEst é uma ferramenta para tratamento estatístico desenvolvida em Python. Proposta por [Jackson Osvaldo da Silva Braga](https://jacksonosvaldo.github.io), a aplicação pretende ser útil em diversas áreas, dinamizando o tratamento e análise de dados, sejam eles ambientais ou não.
 
@@ -75,4 +75,6 @@ Com autor no texto: ... Braga (2018)
 
 Com autor entre parênteses: ... (BRAGA, 2018)
 
+# Publicações
 
+BRAGA, J. O.; CAMPOS, L. D. [**PyEst**: Software Estatístico Desenvolvido em Python](https://github.com/PyEst/pyest.github.io/blob/master/pub/I%20JORNADA%20DE%20TECNOLOGIA%20DA%20INFORMAÇÃO%20DA%20UFRA.pdf). 2018. (Apresentação de Trabalho/Comunicação).
