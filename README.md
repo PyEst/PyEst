@@ -78,3 +78,5 @@ Com autor entre parênteses: ... (BRAGA, 2018)
 # Publicações
 
 BRAGA, J. O.; CAMPOS, L. D. [**PyEst**: Software Estatístico Desenvolvido em Python](https://github.com/PyEst/pyest.github.io/blob/master/pub/I%20JORNADA%20DE%20TECNOLOGIA%20DA%20INFORMAÇÃO%20DA%20UFRA.pdf). 2018. (Apresentação de Trabalho/Comunicação).
+
+UNIVERSIDADE FEDERAL RURAL DA AMAZÔNIA. **PyEst | Software Estatístico Desenvolvido em Python | Jackson Osvaldo da Silva Braga**. Capanema, Pará, 10 jun. 2019. Disponível em: [https://bit.ly/2IAAIF6](https://bit.ly/2IAAIF6).
