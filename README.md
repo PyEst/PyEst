@@ -8,7 +8,7 @@ Em sua primeira versão (0.1), tornada pública em 25 de maio de 2018, ainda tem
 
 # Windows
 
-[Download Windows](https://github.com/PyEst/PyEst/releases/tag/PyEst)
+[Download Windows](https://github.com/PyEst/PyEst/releases)
 
 Para Executar o software em ambiente Windows, é necessário a instalação da linguagem [Python](https://python.org), versão 3.5.
 
@@ -42,7 +42,7 @@ python -m pip install scipy matplotlib pandas numpy
 ```
 # Linux
 
-[Dowload Linux](https://github.com/PyEst/PyEst/releases/tag/PyEst)
+[Dowload Linux](https://github.com/PyEst/PyEst/releases)
 
 Em ambiente linux, caso não esteja instalada a versão 3.5 da linguagem Python, pode-se fazer isso executando o script *install_libs.sh* via linha comando. Para isso, deve-se atribuir permissão ao arquivo com o comando *chmod +x install_libs.sh*. Feito isso, basta executar o script com *./install_libs.sh*.
 
@@ -57,7 +57,7 @@ python3 -m pip install scipy matplotlib pandas numpy
 ```
 
 # Código Fonte
-Para ter acesso ao repositório com o código fonte da aplicação, basta clicar [aqui](https://github.com/PyEst/PyEst/releases/tag/PyEst).
+Para ter acesso ao repositório com o código fonte da aplicação, basta clicar [aqui](https://github.com/PyEst/PyEst/releases).
 
 # Dúvidas ou erros
 
